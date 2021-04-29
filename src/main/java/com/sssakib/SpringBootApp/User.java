@@ -3,7 +3,6 @@ package com.sssakib.SpringBootApp;
 
 import javax.persistence.*;
 
-import java.sql.Blob;
 import java.util.Objects;
 
 @Entity
@@ -11,10 +10,8 @@ import java.util.Objects;
 public class User {
 	 private String name,mobile,email,address,password;
 	 private long id;
-	 private String  image;
-	 
-	 
 
+	 private String  image;
 	
 
 
@@ -86,20 +83,22 @@ public class User {
 	public void setPassword(String password) {
 	   this.password = password;
 	}
+	
 	public String getImage() {
-		return image;
-	}
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
+    }
+	
+	
 
 
 
-	public void setImage(String image) {
-		this.image = image;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, name,mobile,email,address,password,image);
-	}
+//	@Override
+//	public int hashCode() {
+//		return Objects.hash(id, name,mobile,email,address,password,image);
+//	}
 
 	@Override
 	public boolean equals(Object o) {
@@ -128,12 +127,7 @@ public class User {
 
 
 
-	@Override
-	public String toString() {
-		return "User [name=" + name + ", mobile=" + mobile + ", email=" + email + ", address=" + address + ", password="
-				+ password + ", id=" + id + ", image=" + image + "]";
-	}
-	
+
 
 	
 

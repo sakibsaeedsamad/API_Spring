@@ -59,7 +59,7 @@ public class UserController {
     	String mobile=user.getMobile();
     	String password = user.getPassword();
     	
-    	User temp;
+    	User temp = new User();
 
         List<User> users = userRepository.findAll();
         
@@ -67,11 +67,10 @@ public class UserController {
         for (User u: users) {
             if (mobile.equals(u.getMobile()) && password.equals(u.getPassword()) ) {
             	
-            	temp = u;
-            
             	
-            	
-                return temp;
+            	 return temp = u;
+            	 
+                
                 
             }
         }
@@ -104,8 +103,8 @@ public class UserController {
     		
     		u = userOptional.get();
     	    
-    	u.setName(u.getName());
-    	u.setMobile(u.getMobile());
+    	    u.setName(u.getName());
+    	    u.setMobile(u.getMobile());
     		u.setEmail(email);
     		u.setAddress(address);
     		u.setPassword(password);
